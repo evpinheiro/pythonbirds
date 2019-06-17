@@ -1,4 +1,7 @@
 class Pessoa:
+
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade = 35):
         self.idade = idade
         self.nome = nome
@@ -30,8 +33,14 @@ if __name__ == '__main__':
         print(filho.nome)
     eder.sobrenome = "pinheiro"
     del renzo.filhos
-    print("dict_eder", eder.__dict__)
+    renzo.olhos = 1
+    print("dict_eder", eder.__dict__)#mostra os atributos de instâncias
     print("dict_renzo", renzo.__dict__)
+
+    print(Pessoa.olhos)
+    print(renzo.olhos)
+    print(luciano.olhos)
+    print(id(Pessoa.olhos), id(renzo.olhos), id(luciano.olhos))
 
     print(luciano.static_method())
     print(Pessoa.static_method())
